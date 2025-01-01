@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  background-color: #D8BFD8;
+  background: linear-gradient(145deg, #D8BFD8 0%, #c6a0c6 50%, #b392b3 76%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+  min-height: 100vh;
+}
+
+.content {
+  width: 90%;
+  padding: 1px;
+  margin-top: 1px;
+  color: #c7c7c7c9;
+  text-align: justify;
+}
+
+.content h1 {
+  font-family: "Gruppo", sans-serif;
+  font-size: 35px;
+  font-weight: 900;
+  background: #4B0082;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 3.3;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content p {
+  color: #1C1C1C;
+  font-family: "Gruppo", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+.centered-text {
+  color: #1C1C1C;
+  font-family: "Gruppo", sans-serif;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.stack {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 450px;
+  border-radius: 2.5rem;
+  background-color: transparent;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.6s;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.card:nth-last-child(n + 5) {
+  --x: calc(-50% + 45px);
+  transform: translate(var(--x), -50%) scale(0.85);
+}
+
+.card:nth-last-child(4) {
+  --x: calc(-50% + 30px);
+  transform: translate(var(--x), -50%) scale(0.9);
+}
+
+.card:nth-last-child(3) {
+  --x: calc(-50% + 15px);
+  transform: translate(var(--x), -50%) scale(0.95);
+}
+
+.card:nth-last-child(2) {
+  --x: calc(-50%);
+  transform: translate(var(--x), -50%) scale(1);
+}
+
+.card:nth-last-child(1) {
+  --x: calc(-50% - 15px);
+  transform: translate(var(--x), -50%) scale(1.05);
+}
+
+.swap {
+  animation: swap 1.3s ease-out forwards;
+}
+
+@keyframes swap {
+  30% {
+    transform: translate(calc(var(--x) - 100px), -50%) scale(0.85) rotate(-5deg) rotateY(65deg);
+  }
+
+  100% {
+    transform: translate(calc(var(--x) - 15px), -50%) scale(0.5);
+    z-index: -1;
+  }
+}
+
+.carrusel-btn {
+  display: block;
+  width: 80%;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  background: linear-gradient(45deg, #B08AB4, #9260AD);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Happy Monkey", system-ui;
+  font-size: 30px;
+  transition: background 0.3s ease;
+}
+
+.carrusel-btn:hover {
+  background: linear-gradient(45deg, #9260AD, #B08AB4);
+}
+
+@media (max-width: 375px) {
+  .card {
+    width: 220px;
+    height: 300px;
+  }
+  
+  .content p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  .content h1 {
+    font-size: 22px;
+  }
+}
